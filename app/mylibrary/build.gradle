@@ -57,6 +57,14 @@ task androidSourcesJar(type: Jar) {
     from android.sourceSets.main.java.sourceFiles
 }
 
+
+//tasks.named("publishMavenPublicationToMavenLocal") {
+//    mustRunAfter tasks.named("bundleReleaseAar")
+//}
+tasks.named("publishToMavenLocal") {
+    dependsOn tasks.named("bundleReleaseAar")
+}
+
     publishing {
         publications {
             maven(MavenPublication) {
@@ -67,15 +75,20 @@ task androidSourcesJar(type: Jar) {
                 artifactId = 'its-notification-library'
                 version = '1.1.5'
 
+                afterEvaluate {
+                    from components.findByName("default") // Use "default" instead of "release"
+                }
+
                 // Add sources and Javadoc if needed
-                artifact("$buildDir/outputs/aar/mylibrary-release.aar")
+//                artifact("$buildDir/outputs/aar/mylibrary-release.aar")
                 // Ensure you're pointing to the correct AAR file
 
-                pom {
-                    name = 'ITS Notification Library'
-                    description = 'ITS Library For Notifications'
-                    url = 'https://maven.pkg.github.com/rajafareed/its-notification-library'
-                }
+//                pom {
+//                    name = 'ITS Notification Library'
+//                    description = 'ITS Library For Notifications'
+//                    url = 'https://maven.pkg.github.com/rajafareed/its-notification-library'
+//                }
+
             }
 
 
