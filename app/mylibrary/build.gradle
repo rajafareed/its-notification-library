@@ -40,7 +40,7 @@ dependencies {
 
 }
 
-
+afterEvaluate{
     publishing {
         publications {
             release(MavenPublication) {
@@ -49,10 +49,11 @@ dependencies {
                 // Set coordinates for your library
                 groupId = 'com.its.notification-library'
                 artifactId = 'its-notification-library'
-                version = '1.0.5'
+                version = '1.0.6'
 
                 // Add sources and Javadoc if needed
-                artifact("$buildDir/outputs/aar/mylibrary-release.aar") // Ensure you're pointing to the correct AAR file
+                artifact("$buildDir/outputs/aar/mylibrary-release.aar")
+                // Ensure you're pointing to the correct AAR file
 
                 pom {
                     name = 'ITS Notification Library'
@@ -64,13 +65,15 @@ dependencies {
 
 
         repositories {
-        // Replace with your repository destination (e.g., Maven Central, JitPack, etc.)
-        maven {
-            name = "its-notification-library"
-            url = uri("https://maven.pkg.github.com/rajafareed/its-notification-library") // Replace with actual URL
-            credentials {
-                username = project.findProperty("gpr.user") ?: ""
-                password = project.findProperty("gpr.password") ?: ""
+            // Replace with your repository destination (e.g., Maven Central, JitPack, etc.)
+            maven {
+                name = "its-notification-library"
+                url = uri("https://maven.pkg.github.com/rajafareed/its-notification-library")
+                // Replace with actual URL
+                credentials {
+                    username = project.findProperty("gpr.user") ?: ""
+                    password = project.findProperty("gpr.password") ?: ""
+                }
             }
         }
     }
