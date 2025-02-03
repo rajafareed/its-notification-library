@@ -49,7 +49,7 @@ dependencies {
                 // Set coordinates for your library
                 groupId = 'com.its.notification-library'
                 artifactId = 'its-notification-library'
-                version = '1.0.0'
+                version = '1.0.3'
 
                 // Add sources and Javadoc if needed
                 artifact("$buildDir/outputs/aar/mylibrary-release.aar") // Ensure you're pointing to the correct AAR file
