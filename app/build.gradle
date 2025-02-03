@@ -6,10 +6,10 @@ android {
     namespace 'com.fe.sdkparentapp'
     compileSdk 35
 
+
     defaultConfig {
         applicationId "com.fe.sdkparentapp"
         minSdk 24
-        targetSdk 34
         versionCode 1
         versionName "1.0"
 
