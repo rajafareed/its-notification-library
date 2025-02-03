@@ -5,11 +5,10 @@ plugins {
 
 android {
     namespace 'com.fe.mylibrary'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         minSdk 21
-        targetSdk 34
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -49,7 +48,7 @@ afterEvaluate{
                 // Set coordinates for your library
                 groupId = 'com.its.notification-library'
                 artifactId = 'its-notification-library'
-                version = '1.0.7'
+                version = '1.0.9'
 
                 // Add sources and Javadoc if needed
                 artifact("$buildDir/outputs/aar/mylibrary-release.aar")
