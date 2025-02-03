@@ -65,7 +65,7 @@ task androidSourcesJar(type: Jar) {
                 // Set coordinates for your library
                 groupId = 'com.its.notification-library'
                 artifactId = 'its-notification-library'
-                version = '1.1.4'
+                version = '1.1.5'
 
                 // Add sources and Javadoc if needed
                 artifact("$buildDir/outputs/aar/mylibrary-release.aar")
