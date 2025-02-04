@@ -1,6 +1,8 @@
 plugins {
     id 'maven-publish'
+
     alias(libs.plugins.android.library)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -71,7 +73,7 @@ task androidSourcesJar(type: Jar) {
                 // Set coordinates for your library
                 groupId = 'com.its.notification-library'
                 artifactId = 'its-notification-library'
-                version = '1.2.3'
+                version = '1.2.4'
 
                 afterEvaluate {
                     from components.findByName("default") // Use "default" instead of "release"
@@ -108,3 +110,5 @@ task androidSourcesJar(type: Jar) {
 tasks.named("publishMavenPublicationToMavenLocal") {
     mustRunAfter tasks.named("bundleReleaseAar")
 }
+
+
