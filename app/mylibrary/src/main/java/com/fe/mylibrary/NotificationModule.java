@@ -18,11 +18,14 @@ public class NotificationModule {
 
 
         try {
-            FirebaseApp.initializeApp(context, new FirebaseOptions.Builder()
+            FirebaseOptions firebaseOptions =new FirebaseOptions.Builder()
                     .setApplicationId("1:590518950252:android:3d8a285c539311fdaf7b49")
                     .setApiKey("AIzaSyDIj0uxxxvRplSnhKeTzaWCfesZH2AA9dI")
                     .setProjectId("parent-app-eb9dd")
-                    .build(), "ITS_LIB");
+                    .build();
+                     FirebaseApp.initializeApp(context,firebaseOptions,
+                    "ITSLIB");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
