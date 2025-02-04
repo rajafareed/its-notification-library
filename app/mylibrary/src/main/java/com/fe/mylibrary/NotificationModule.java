@@ -15,13 +15,7 @@ public class NotificationModule {
 
     public static void initializeFirebase(Context context) {
 
-            FirebaseOptions options = new FirebaseOptions.Builder()
-                    .setApiKey("AIzaSyDIj0uxxxvRplSnhKeTzaWCfesZH2AA9dI")
-                    .setApplicationId("1:590518950252:android:3d8a285c539311fdaf7b49")
-                    .setProjectId("parent-app-eb9dd")// e.g., "1:1234567890:android:abcdef"// Optional, required if using Firebase Storage
-                    .build();
 
-            FirebaseApp.initializeApp(context, options);
 
         try {
             FirebaseApp.initializeApp(context, new FirebaseOptions.Builder()
