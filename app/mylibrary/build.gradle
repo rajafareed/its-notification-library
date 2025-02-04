@@ -61,9 +61,7 @@ task androidSourcesJar(type: Jar) {
 //tasks.named("publishMavenPublicationToMavenLocal") {
 //    mustRunAfter tasks.named("bundleReleaseAar")
 //}
-tasks.named("publishToMavenLocal") {
-    dependsOn tasks.named("bundleReleaseAar")
-}
+
 
     publishing {
         publications {
@@ -73,15 +71,15 @@ tasks.named("publishToMavenLocal") {
                 // Set coordinates for your library
                 groupId = 'com.its.notification-library'
                 artifactId = 'its-notification-library'
-                version = '1.2.2'
+                version = '1.2.3'
 
-
+                afterEvaluate {
                     from components.findByName("default") // Use "default" instead of "release"
 
-                // Add sources and Javadoc if needed
-                artifact("$buildDir/outputs/aar/mylibrary-release.aar")
-                // Ensure you're pointing to the correct AAR file
-
+                    // Add sources and Javadoc if needed
+                    artifact("$buildDir/outputs/aar/mylibrary-release.aar")
+                    // Ensure you're pointing to the correct AAR file
+                }
                 pom {
                     name = 'ITS Notification Library'
                     description = 'ITS Library For Notifications'
@@ -105,4 +103,8 @@ tasks.named("publishToMavenLocal") {
 //            }
 //        }
     }
+}
+
+tasks.named("publishMavenPublicationToMavenLocal") {
+    mustRunAfter tasks.named("bundleReleaseAar")
 }
