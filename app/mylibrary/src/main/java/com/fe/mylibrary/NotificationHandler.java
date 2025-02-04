@@ -30,7 +30,10 @@ public class NotificationHandler extends FirebaseMessagingService {
 
             Log.d(TAG, "Notification Title From Module: " + title);
             Log.d(TAG, "Notification Message From Module: " + message);
-
+            Intent intent = new Intent("com.fe.mylibrary.NOTIFICATION_RECEIVED");
+            intent.putExtra("title", "Notification title");
+            intent.putExtra("body", "Notification body");
+            sendBroadcast(intent);
 //            showNotification(title, message);
         }
     }
