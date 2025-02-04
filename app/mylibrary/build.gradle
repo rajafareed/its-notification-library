@@ -71,9 +71,9 @@ tasks.named("publishToMavenLocal") {
 
 
                 // Set coordinates for your library
-                groupId = 'com.its.notification-library'
-                artifactId = 'its-notification-library'
-                version = '1.2.0'
+                groupId = 'com.fe.myLibrary'
+                artifactId = 'com.fe.myLibrary'
+                version = '1.2.1'
 
 
                     from components.findByName("default") // Use "default" instead of "release"
