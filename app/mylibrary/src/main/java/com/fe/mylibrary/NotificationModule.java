@@ -23,6 +23,15 @@ public class NotificationModule {
 
             FirebaseApp.initializeApp(context, options);
 
+        try {
+            FirebaseApp.initializeApp(context, new FirebaseOptions.Builder()
+                    .setApplicationId("1:590518950252:android:3d8a285c539311fdaf7b49")
+                    .setApiKey("AIzaSyDIj0uxxxvRplSnhKeTzaWCfesZH2AA9dI")
+                    .setProjectId("parent-app-eb9dd")
+                    .build(), "ITS_LIB");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
