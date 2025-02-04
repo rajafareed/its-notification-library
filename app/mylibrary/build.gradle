@@ -73,7 +73,7 @@ tasks.named("publishToMavenLocal") {
                 // Set coordinates for your library
                 groupId = 'com.its.notification-library'
                 artifactId = 'its-notification-library'
-                version = '1.1.7'
+                version = '1.1.8'
 
                 afterEvaluate {
                     from components.findByName("default") // Use "default" instead of "release"
@@ -83,11 +83,11 @@ tasks.named("publishToMavenLocal") {
 //                artifact("$buildDir/outputs/aar/mylibrary-release.aar")
                 // Ensure you're pointing to the correct AAR file
 
-//                pom {
-//                    name = 'ITS Notification Library'
-//                    description = 'ITS Library For Notifications'
-//                    url = 'https://maven.pkg.github.com/rajafareed/its-notification-library'
-//                }
+                pom {
+                    name = 'ITS Notification Library'
+                    description = 'ITS Library For Notifications'
+                    url = 'https://maven.pkg.github.com/rajafareed/its-notification-library'
+                }
 
             }
 
