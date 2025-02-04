@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutionException;
 public class NotificationModule {
 
     public static void initializeFirebase(Context context) {
-        if (FirebaseApp.getApps(context).isEmpty()) {
+
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setApiKey("AIzaSyDIj0uxxxvRplSnhKeTzaWCfesZH2AA9dI")
                     .setApplicationId("1:590518950252:android:3d8a285c539311fdaf7b49")
@@ -23,7 +23,7 @@ public class NotificationModule {
 
             FirebaseApp.initializeApp(context, options);
 
-        }
+
     }
 
     private static final String TAG = "LibraryTAG";
