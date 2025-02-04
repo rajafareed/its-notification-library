@@ -71,15 +71,15 @@ tasks.named("publishToMavenLocal") {
 
 
                 // Set coordinates for your library
-                groupId = 'com.fe.myLibrary'
-                artifactId = 'com.fe.myLibrary'
-                version = '1.2.1'
+                groupId = 'com.its.notification-library'
+                artifactId = 'its-notification-library'
+                version = '1.2.2'
 
 
                     from components.findByName("default") // Use "default" instead of "release"
 
                 // Add sources and Javadoc if needed
-//                artifact("$buildDir/outputs/aar/mylibrary-release.aar")
+                artifact("$buildDir/outputs/aar/mylibrary-release.aar")
                 // Ensure you're pointing to the correct AAR file
 
                 pom {
